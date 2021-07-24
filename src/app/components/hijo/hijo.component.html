@@ -1,0 +1,23 @@
+<hr>
+<div *ngIf="objetoFruta.id != 0">
+    <div class="card border">
+        <div></div>
+        <img src="{{ objetoFruta.imagen }}" alt="{{ objetoFruta.nombre }}" class="card-img-top" />
+        <div class="card-body">
+            <h5 class="card-title">{{ objetoFruta.nombre }}</h5>
+            <hr>
+            <p class="card-text">{{ objetoFruta.descripcion }}</p>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text btn-dark">$ {{ objetoFruta.precio }}/{{ objetoFruta.unidad }}</span>
+                <span class="input-group-text btn-warning">Total: $ {{ objetoFruta.precio * NumberA }}</span>
+                <input type="number" class="form-control" id="NumberA" name="NumberA"
+                    placeholder="{{ objetoFruta.ventaMin }}" min="{{ objetoFruta.ventaMin }}"
+                    max="{{ objetoFruta.ventaMax }}" step="1" aria-label="NumberA" [(ngModel)]="NumberA" />
+                <button type="button" class="btn btn-dark" (click)="enviarValorAPadre()">
+                    +
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
